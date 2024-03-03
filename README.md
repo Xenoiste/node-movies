@@ -6,6 +6,15 @@ Sinon vous pouvez tester l'API avec la documentation.
 Le projet est développé avec NodeJS version 20 donc assurez vous de bien l'avoir installé.
 Le framework utilisé est "hapi".
 
+* [Démarrer le projet](#démarrer-le-projet)
+    * [Variables d'environements](#variables-denvironements)
+    * [Installation des logiciels nécessaires](#installation-des-logiciels-nécessaires)
+    * [Lancer le projet](#lancer-le-projet)
+* [Routes](#routes)
+    * [Utilisateurs](#utilisateurs)
+    * [Films](#films)
+    * [Films favoris](#films-favoris)
+
 ## Démarrer le projet
 
 Clonez le projet.
