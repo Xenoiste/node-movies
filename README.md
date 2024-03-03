@@ -1,7 +1,7 @@
 # Node Movies
 
 Node Movies est une API qui permet d'avoir une bibliothèque de films et d'avoir une liste de ses films favoris.  
-Vous pouvez utilisez ce projet pour creéz une application frontend qui utilise l'API.
+Vous pouvez utiliser ce projet pour creér une application frontend qui utilise l'API.
 Sinon vous pouvez tester l'API avec la documentation.  
 Le projet est développé avec NodeJS version 20 donc assurez vous de bien l'avoir installé.
 Le framework utilisé est "hapi".
@@ -21,7 +21,7 @@ Clonez le projet.
 
 ### Variables d'environements
 
-Dans le dossier "server", créez un fichier ".env" et copier le contenu à partir de ".env-keep".
+Dans le dossier "server", créez un fichier ".env" et copiez le contenu à partir de ".env-keep".
 Il faut maintenant configurer les variables pour pouvoir lancer le projet.
 Si vous n'avez pas de base de données et de RabbitMQ, vous pourrez les installer dans la partie suivante.
 
@@ -31,9 +31,9 @@ DB_USER pour l'utilisateur MySQL que l'app utilise pour se connecter
 DB_PASSWORD pour le mot de passe qui correspond à l'utilisateur définit à DB_USER  
 DB_DATABASE pour le schéma que l'application doit utiliser
 
-MAILER_HOST est l'adresse de votre serveur SMTP qui est utilisé pour l'envoie de mails  
+MAILER_HOST est l'adresse de votre serveur SMTP qui est utilisé pour l'envoi de mails  
 MAILER_PORT pour le port du serveur SMTP  
-MAILER_USERNAME pour l'email du compte qui envoie les mails dans l'app  
+MAILER_USERNAME pour l'adresse email du compte qui envoie les mails dans l'app  
 MAILER_PASSWORD pour le mot de passe du compte définit à MAILER_USERNAME
 
 RABBITMQ_HOST est l'adresse du serveur RabbitMQ
@@ -53,9 +53,9 @@ Installez RabbitMQ:
 docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management
 ```
 
-Configurer un serveur SMTP pour tester les envois de mail:  
+Configurez un serveur SMTP pour tester les envois de mail:  
 Allez sur [Ethereal](https://ethereal.email/), créez un compte et vous aurez les identifiants que vous pouvez mettre
-dans les variables d'environnements. Copier la valeur de "Username' pour "MAILER_USERNAME", la valeur de "Password" pour
+dans les variables d'environnements. Copiez la valeur de "Username' pour "MAILER_USERNAME", la valeur de "Password" pour
 "MAILER_PASSWORD", "smtp.ethereal.email" pour "MAILER_HOST" et "587" pour MAILER_PORT.
 
 ### Lancer le projet
@@ -97,7 +97,7 @@ POST /movie pour créer un film (nécessite d'être admin) Cela envoie un mail �
 DELETE /movie/{id} pour supprimer un film (nécessite d'être admin)  
 PATCH /movie/{id} pour modifier un film (nécessite d'être admin) Cela envoie un mail aux utilisateurs qui l'ont en
 favoris.  
-GET /movies pour récuper la liste de tous les films (nécessite d'être authentifié)
+GET /movies pour récuper la liste de tous les films (nécessite d'être authentifié)  
 GET /movies/export pour envoyer un CSV par mail contenant tous les films (nécessite d'être admin)
 
 ### Films favoris
