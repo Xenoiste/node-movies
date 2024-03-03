@@ -24,6 +24,7 @@
     "bcrypt": "^5.1.1",
     "exiting": "6.0.1",
     "joi": "17.x.x",
+    "json2csv": "^6.0.0-alpha.2",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "nodemailer": "^6.9.11",
