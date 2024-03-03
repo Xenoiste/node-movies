@@ -1,15 +1,17 @@
+'use strict';
+
 require('dotenv').config({ path: '../server/.env' });
 const amqp = require('amqplib');
 const { Model } = require('objection');
 const Movie = require('../lib/models/movie');
-const { writeFileSync } = require("fs");
+const { writeFileSync } = require('fs');
 const { parse } = require('json2csv');
-const {createTransport} = require("nodemailer");
+const { createTransport } = require('nodemailer');
 const Knex = require('knex')({
     client: 'mysql2',
     connection: {
         host: process.env.DB_HOST || '127.0.0.1',
-        port: 3307,
+        port: process.env.DB_PORT || 3307,
         user: process.env.DB_USER || 'root',
         password: process.env.DB_PASSWORD || 'hapi',
         database: process.env.DB_DATABASE || 'user'
@@ -18,7 +20,7 @@ const Knex = require('knex')({
 Model.knex(Knex);
 
 async function consumeQueue() {
-    const connection = await amqp.connect('amqp://localhost');
+    const connection = await amqp.connect(process.env.RABBITMQ_HOST);
     const channel = await connection.createChannel();
     const queue = 'export_queue';
 
